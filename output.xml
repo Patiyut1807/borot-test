@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.1 on win32)" generated="2024-03-05T01:04:05.181696" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot" source="D:\Tx10\Documents\github\borot-test\robot.robot">
+<test id="s1-t1" name="Quick Get Request Test" line="6">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-03-05T01:04:05.282555" level="INFO">GET Request : url=http://localhost:5000/is_prime/13 
+ path_url=/is_prime/13 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-05T01:04:05.282555" level="INFO">GET Response : url=http://localhost:5000/is_prime/13 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '4', 'ETag': 'W/"4-X/5TO4MPCKAyY0ipFgr6/IraRNs"', 'Date': 'Mon, 04 Mar 2024 18:04:05 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body=true 
+ </msg>
+<msg time="2024-03-05T01:04:05.282555" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>http://localhost:5000/is_prime/13</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-03-05T01:04:05.276692" elapsed="0.005863"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>${200}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-05T01:04:05.282555" elapsed="0.000996"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.text}</arg>
+<arg>true</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-03-05T01:04:05.283551" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-03-05T01:04:05.276692" elapsed="0.006859"/>
+</test>
+<status status="PASS" start="2024-03-05T01:04:05.183691" elapsed="0.100858"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot">Robot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
